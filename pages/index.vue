@@ -33,6 +33,38 @@
         <Partners />
       </v-col>
     </v-row>
+    <v-row class="stats">
+      <v-col class="stat_text">
+        We connect crypto startups at the initial stage with a Russian-speaking
+        audience. We’re exploring their tech and investment attractiveness and
+        promoting them.
+        <br /><br />
+        Our mission is to create the strongest community of blockchain investors
+        and traders in the CIS. We believe in the active implementation of
+        blockchain technologies.
+      </v-col>
+      <v-col class="stat_numbers d-flex justify-end">
+        <div class="first_stat">
+          <div class="number">249+</div>
+          <div class="number_description">Projects</div>
+        </div>
+        <div>
+          <div class="number">$1.5m</div>
+          <div class="number_description">Under management</div>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row class="nodes">
+      <v-col class="pa-0">
+        <div>Nodes</div>
+        Decentralization, safety and security are important qualities of
+        distributed systems.
+        <br /><br />
+        The unfolding of the nodes of the networks of promising projects shows
+        our long-term vision of the market.
+      </v-col>
+      <v-col> </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -129,6 +161,39 @@ export default {
   padding-left: 2.928vw;
   padding-right: 2.928vw;
 }
+.stats {
+  margin-top: 14.641vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+  font-weight: normal;
+  font-size: 1.464vw;
+  line-height: 160%;
+}
+.stats .number {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 4.685vw;
+  line-height: 5.637vw;
+
+  color: #ffffff;
+}
+.stats .number_description {
+  font-weight: normal;
+  font-size: 1.318vw;
+  line-height: 1.757vw;
+  color: #f5cd6f;
+}
+.first_stat {
+  margin-right: 7.321vw;
+}
+.stat_text {
+  padding: 0;
+  padding-right: 2.489vw;
+}
+.stat_numbers {
+  padding: 0;
+  padding-top: 1.757vw;
+}
 @media only screen and (min-width: 1365px) {
   .header {
     font-size: 56px;
@@ -157,6 +222,35 @@ export default {
     margin-top: 320px !important;
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .stats {
+    margin-top: 200px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+    font-size: 20px;
+  }
+  .stats .number {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+
+    color: #ffffff;
+  }
+  .stats .number_description {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #f5cd6f;
+  }
+  .first_stat {
+    margin-right: 100px;
+  }
+  .stat_numbers {
+    padding-top: 34px;
+  }
+  .stat_text {
+    padding-right: 24px;
   }
 }
 </style>

@@ -24,7 +24,7 @@ export default {
       this.$gsap
         .timeline()
         .to('.' + partner.name, {
-          opacity: 0.3,
+          opacity: 0.4,
           duration: 0.2,
         })
         .set('.' + partner.name, {
