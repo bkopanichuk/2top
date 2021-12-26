@@ -122,6 +122,7 @@ export default {
   right: 0;
 }
 .menu {
+  z-index: 10;
   position: absolute;
   padding-left: 4.685vw;
   padding-right: 4.685vw;

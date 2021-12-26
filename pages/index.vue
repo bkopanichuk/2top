@@ -29,18 +29,22 @@
       </v-col>
     </v-row>
     <v-row class="partners">
-      <v-col class="px-0">
-        <img :src="require('~/assets/partners/temp.svg')" />
+      <v-col class="pa-0">
+        <Partners />
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
+import Partners from '@/components/Partners.vue'
 export default {
   name: 'IndexPage',
+  components: {
+    Partners,
+  },
   methods: {
-    animateHeader() {
+    animateBigLogo() {
       // let mouseOverContainer = document.getElementById('t3d')
       window.addEventListener('mousemove', (e) => {
         let xy = [e.clientX, e.clientY]
@@ -61,8 +65,8 @@ export default {
           // Position move
           let x = ((position[0] - box.x - box.width / 2) / box.width) * speed
           let y = ((position[1] - box.y - box.height / 2) / box.height) * speed
-          x = Math.abs(x) >= 8 ? Math.sign(x) * 8 : x
-          y = Math.abs(y) >= 8 ? Math.sign(y) * 8 : y
+          x = Math.abs(x) >= 7 ? Math.sign(x) * 7 : x
+          y = Math.abs(y) >= 7 ? Math.sign(y) * 7 : y
 
           this.$gsap.to(layer, {
             duration: 0.2,
@@ -74,7 +78,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.animateHeader()
+      this.animateBigLogo()
     })
   },
 }
@@ -86,55 +90,45 @@ export default {
   font-weight: 700;
   font-size: 4.1vw;
   line-height: 5.564vw;
-
   color: #ffffff;
-
   padding-top: 20.278vw;
   padding-left: 4.685vw;
 }
-
 .header_grain {
   z-index: 4;
   position: absolute;
   top: 0;
 }
-
 .header_grain img {
   transform: translateX(-15.373vw);
   width: 122.987vw;
 }
-
 .big_logo {
   z-index: 3;
   position: absolute;
   top: 21.669vw;
 }
-
 .big_logo img {
   width: 20.498vw;
 }
-
 .big_logo_background {
   z-index: 2;
   position: absolute;
   top: 4.392vw;
 }
-
 .big_logo_background img {
   width: 59.297vw;
 }
-
 .gradient_text {
   background: -webkit-linear-gradient(70deg, #f5cd6f, #fce2a4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .partners {
-  margin-top: 25.622vw !important;
-  padding-left: 4.685vw;
+  margin-top: 23.426vw !important;
+  padding-left: 2.928vw;
+  padding-right: 2.928vw;
 }
-
 @media only screen and (min-width: 1365px) {
   .header {
     font-size: 56px;
@@ -160,8 +154,9 @@ export default {
     transform: translateX(-210px);
   }
   .partners {
-    margin-top: 350px !important;
-    padding-left: 64px;
+    margin-top: 320px !important;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 </style>
