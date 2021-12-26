@@ -1,7 +1,15 @@
 <template>
   <div class="d-flex align-center justify-space-between flex-wrap">
-    <div v-for="partner in partners" :key="partner.name">
-      <img class="partner_logo" :src="partner.src_gray" :alt="partner.name" />
+    <div v-for="partner in partners" :key="partner.name" style="z-index: 2">
+      <v-hover v-slot="{ hover }">
+        <a :href="partner.url" target="_blank">
+          <img
+            class="partner_logo"
+            :src="hover ? partner.src : partner.src_gray"
+            :alt="partner.name"
+          />
+        </a>
+      </v-hover>
     </div>
   </div>
 </template>
