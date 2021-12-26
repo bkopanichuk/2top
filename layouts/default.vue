@@ -1,19 +1,16 @@
 <template>
   <v-app dark>
-    <v-main
-      style="
-        background-color: #191919;
-        overflow-x: hidden;
-        font-family: 'Darker Grotesque';
-      "
-    >
+    <v-main style="background-color: #191919; font-family: 'Darker Grotesque'">
       <!-- Preloader -->
       <div id="preloader">
         <div id="preloader_logo" class="d-flex logo align-center">
           <v-img width="100%" :src="require('~/assets/logo.svg')" alt="logo" />
         </div>
       </div>
-      <v-container style="max-width: 1366px">
+      <div class="grain" style="z-index: 1">
+        <v-img :src="require('~/assets/grain.svg')" />
+      </div>
+      <v-container style="max-width: 1366px; z-index: 2">
         <!-- Menu -->
         <div class="d-flex menu align-center justify-center">
           <div
@@ -50,9 +47,6 @@
           </div>
         </div>
         <Nuxt />
-        <div class="grain">
-          <v-img :src="require('~/assets/grain.svg')" />
-        </div>
       </v-container>
     </v-main>
   </v-app>
@@ -76,15 +70,19 @@ export default {
       //Logo
       this.$gsap.to('#preloader_logo', {
         opacity: 1,
+        duration: 0.4,
+        ease: 'expo.out',
+      })
+      this.$gsap.to('#preloader_logo', {
         scale: 2,
         duration: 1,
-        ease: 'expoScale(1, 2, expo.out)',
+        ease: 'expoScale(1, 1.5, expo.out)',
       })
       this.$gsap.to('#preloader_logo', {
         delay: 1,
         scale: 100,
         duration: 0.4,
-        ease: 'expoScale(2, 100, expo.in)',
+        ease: 'expoScale(1.5, 100, expo.in)',
         webkitFilter: 'blur(1024px)',
         filter: 'blur(1024px)',
       })
@@ -105,7 +103,7 @@ export default {
         .to('#preloader', {
           display: 'none',
           opacity: 0,
-          duration: 1,
+          duration: 1.6,
         })
     },
   },
@@ -128,7 +126,7 @@ export default {
 }
 #preloader_logo {
   opacity: 0;
-  width: 12vw;
+  width: 20vw;
 }
 .menu {
   position: absolute;
@@ -140,7 +138,7 @@ export default {
   right: 0;
 }
 .grain {
-  position: absolute;
+  position: fixed;
   mix-blend-mode: normal;
   top: 0;
   left: 0;

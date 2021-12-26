@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- First block -->
-    <v-row id="ex1" class="header">
+    <v-row class="header">
       <v-col
         cols="6"
         style="z-index: 2; animation: 3s linear 1s slidein"
@@ -16,27 +16,18 @@
           members in the crypto space
         </div>
       </v-col>
-      <v-col class="d-flex justify-center" style="z-index: 1">
-        <div class="big_logo_background" id="ex3-layer">
+      <v-col class="d-flex justify-center align-center" style="z-index: 1">
+        <div class="header_grain t3d-layer" data-speed="2">
           <img
-            :src="require('~/assets/index/BigLogoBackground.svg')"
-            data-speed="5"
-            class="layer"
-          />
-        </div>
-        <div class="big_logo" id="ex1-layer">
-          <img
-            :src="require('~/assets/index/BigLogo.svg')"
-            data-speed="3"
-            class="layer"
-          />
-        </div>
-        <div class="header_grain" id="ex2-layer">
-          <img
-            data-speed="3"
-            class="layer"
+            style="transform: translateX(-210px)"
             :src="require('~/assets/index/HeaderGrains.png')"
           />
+        </div>
+        <div class="big_logo_background t3d-layer" data-speed="-4">
+          <img :src="require('~/assets/index/BigLogoBackground.svg')" />
+        </div>
+        <div class="big_logo t3d-layer" data-speed="2">
+          <img :src="require('~/assets/index/BigLogo.svg')" />
         </div>
       </v-col>
     </v-row>
@@ -51,56 +42,43 @@
 <script>
 export default {
   name: 'IndexPage',
-  mounted() {
-    let constrain = 800
-    let mouseOverContainer = document.getElementById('ex1')
-    let ex1Layer = document.getElementById('ex1-layer')
-    let ex2Layer = document.getElementById('ex2-layer')
-    let ex3Layer = document.getElementById('ex3-layer')
+  methods: {
+    animateHeader() {
+      // let mouseOverContainer = document.getElementById('t3d')
+      window.addEventListener('mousemove', (e) => {
+        let xy = [e.clientX, e.clientY]
 
-    function transforms(x, y, el) {
-      let box = el.getBoundingClientRect()
-      let calcX = -(y - box.y - box.height / 2) / constrain
-      let calcY = (x - box.x - box.width / 2) / constrain
+        // #3D transform
+        let constrain = 600 //Rotation scale
+        this.$gsap.utils.toArray('.t3d-layer').forEach((layer) => {
+          let position = xy.concat([layer])
+          let box = layer.getBoundingClientRect()
+          let speed = layer.getAttribute('data-speed')
 
-      return (
-        'perspective(100px) ' +
-        '   rotateX(' +
-        calcX +
-        'deg) ' +
-        '   rotateY(' +
-        calcY +
-        'deg) '
-      )
-    }
+          // For rotation
+          let calcX = -(position[1] - box.y - box.height / 2) / constrain
+          let calcY = (position[0] - box.x - box.width / 2) / constrain
+          calcX = Math.abs(calcX) >= 2 ? Math.sign(calcX) * 2 : calcX
+          calcY = Math.abs(calcY) >= 2 ? Math.sign(calcY) * 2 : calcY
 
-    function transformElement(el, xyEl) {
-      el.style.transform = transforms.apply(null, xyEl)
-    }
+          // Position move
+          let x = ((position[0] - box.x - box.width / 2) / box.width) * speed
+          let y = ((position[1] - box.y - box.height / 2) / box.height) * speed
+          x = Math.abs(x) >= 8 ? Math.sign(x) * 8 : x
+          y = Math.abs(y) >= 8 ? Math.sign(y) * 8 : y
 
-    mouseOverContainer.onmousemove = function (e) {
-      let xy = [e.clientX, e.clientY]
-      let position = xy.concat([ex1Layer])
-      let position2 = xy.concat([ex2Layer])
-      let position3 = xy.concat([ex3Layer])
-
-      this.querySelectorAll('.layer').forEach((layer) => {
-        const speed = layer.getAttribute('data-speed')
-
-        const x = (window.innerWidth - e.clientX * speed) / 100
-        const y = (window.innerHeight - e.clientY * speed) / 100
-
-        window.requestAnimationFrame(function () {
-          layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+          this.$gsap.to(layer, {
+            duration: 0.2,
+            transform: `perspective(100px) rotateX(${calcX}deg) rotateY(${calcY}deg) translateX(${x}px) translateY(${y}px)`,
+          })
         })
       })
-
-      window.requestAnimationFrame(function () {
-        transformElement(ex1Layer, position)
-        transformElement(ex2Layer, position2)
-        transformElement(ex3Layer, position3)
-      })
-    }
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.animateHeader()
+    })
   },
 }
 </script>
@@ -122,7 +100,7 @@ export default {
   position: absolute;
   mix-blend-mode: normal;
   top: 0;
-  margin-right: 30.747vw;
+  z-index: 4;
 }
 
 .header_grain img {
@@ -132,6 +110,7 @@ export default {
 .big_logo {
   position: absolute;
   top: 21.23vw;
+  z-index: 3;
 }
 
 .big_logo img {
@@ -139,9 +118,9 @@ export default {
 }
 
 .big_logo_background {
+  z-index: 2;
   position: absolute;
-  top: 2.928vw;
-  margin-left: -3.367vw;
+  top: 2.782vw;
 }
 
 .big_logo_background img {
@@ -168,21 +147,18 @@ export default {
     padding-left: 64px;
   }
   .big_logo {
-    top: 290px;
+    top: 296px;
   }
   .big_logo img {
-    width: 304px;
+    width: 280px;
   }
   .big_logo_background {
-    width: 810px;
-    top: 40px;
-    margin-left: -46px;
+    top: 60px;
   }
   .big_logo_background img {
     width: 810px;
   }
   .header_grain {
-    margin-right: 420px;
   }
   .header_grain img {
     width: 1680px !important;
