@@ -3,7 +3,7 @@
     <v-main style="background-color: #191919; font-family: 'Darker Grotesque'">
       <!-- Preloader -->
       <div id="preloader">
-        <div id="preloader_logo" class="d-flex logo align-center">
+        <div id="preloader_logo" class="d-flex align-center">
           <v-img width="100%" :src="require('~/assets/logo.svg')" alt="logo" />
         </div>
       </div>
@@ -17,7 +17,7 @@
             class="d-flex justify-space-between"
             style="width: 100%; max-width: 1238px !important"
           >
-            <div class="d-flex logo align-center">
+            <div class="d-flex align-center">
               <v-img :src="require('~/assets/logo.svg')" alt="logo" />
             </div>
             <div
@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     showPage() {
-      //Logo
+      //Preloader Logo
       this.$gsap.to('#preloader_logo', {
         opacity: 1,
         duration: 0.4,

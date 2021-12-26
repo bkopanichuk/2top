@@ -5,7 +5,7 @@
       <v-col
         cols="6"
         style="z-index: 2; animation: 3s linear 1s slidein"
-        class="px-0"
+        class="pa-0"
       >
         <div>
           Hello, we’re
@@ -18,10 +18,7 @@
       </v-col>
       <v-col class="d-flex justify-center align-center" style="z-index: 1">
         <div class="header_grain t3d-layer" data-speed="2">
-          <img
-            style="transform: translateX(-210px)"
-            :src="require('~/assets/index/HeaderGrains.png')"
-          />
+          <img :src="require('~/assets/index/HeaderGrains.png')" />
         </div>
         <div class="big_logo_background t3d-layer" data-speed="-4">
           <img :src="require('~/assets/index/BigLogoBackground.svg')" />
@@ -92,35 +89,35 @@ export default {
 
   color: #ffffff;
 
-  padding-top: 21.278vw;
+  padding-top: 20.278vw;
   padding-left: 4.685vw;
 }
 
 .header_grain {
-  position: absolute;
-  mix-blend-mode: normal;
-  top: 0;
   z-index: 4;
+  position: absolute;
+  top: 0;
 }
 
 .header_grain img {
-  width: 122.987vw !important;
+  transform: translateX(-15.373vw);
+  width: 122.987vw;
 }
 
 .big_logo {
-  position: absolute;
-  top: 21.23vw;
   z-index: 3;
+  position: absolute;
+  top: 21.669vw;
 }
 
 .big_logo img {
-  width: 22.255vw;
+  width: 20.498vw;
 }
 
 .big_logo_background {
   z-index: 2;
   position: absolute;
-  top: 2.782vw;
+  top: 4.392vw;
 }
 
 .big_logo_background img {
@@ -158,10 +155,9 @@ export default {
   .big_logo_background img {
     width: 810px;
   }
-  .header_grain {
-  }
   .header_grain img {
-    width: 1680px !important;
+    width: 1680px;
+    transform: translateX(-210px);
   }
   .partners {
     margin-top: 350px !important;
