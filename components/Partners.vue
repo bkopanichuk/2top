@@ -1,21 +1,41 @@
 <template>
   <div class="d-flex align-center justify-space-between flex-wrap">
     <div v-for="partner in partners" :key="partner.name" style="z-index: 2">
-      <v-hover v-slot="{ hover }">
-        <a :href="partner.url" target="_blank">
-          <img
-            class="partner_logo"
-            :src="hover ? partner.src : partner.src_gray"
-            :alt="partner.name"
-          />
-        </a>
-      </v-hover>
+      <a
+        @mouseover="changeSrc(partner, true)"
+        @mouseleave="changeSrc(partner, false)"
+        :href="partner.url"
+        target="_blank"
+      >
+        <img
+          :class="'partner_logo ' + partner.name"
+          :src="partner.src_gray"
+          :alt="partner.name"
+        />
+      </a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    changeSrc(partner, hover) {
+      this.$gsap
+        .timeline()
+        .to('.' + partner.name, {
+          opacity: 0.3,
+          duration: 0.2,
+        })
+        .set('.' + partner.name, {
+          attr: { src: hover ? partner.src : partner.src_gray },
+        })
+        .to('.' + partner.name, {
+          opacity: 1,
+          duration: 0.3,
+        })
+    },
+  },
   data() {
     return {
       partners: [
