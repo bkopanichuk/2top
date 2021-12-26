@@ -10,7 +10,7 @@
       <div class="grain" style="z-index: 1">
         <v-img :src="require('~/assets/grain.svg')" />
       </div>
-      <v-container style="max-width: 1366px; z-index: 2">
+      <v-container id="content" style="max-width: 1366px; z-index: 2">
         <!-- Menu -->
         <div class="d-flex menu align-center justify-center">
           <div
@@ -86,6 +86,9 @@ export default {
           delay: 1.2,
           duration: 0.2,
         })
+        .set('#content', {
+          visibility: 'visible',
+        })
         .to('#preloader', {
           display: 'none',
           opacity: 0,
@@ -97,6 +100,9 @@ export default {
 </script>
 
 <style>
+#content {
+  visibility: hidden;
+}
 #preloader {
   display: flex;
   flex-direction: column;
@@ -108,7 +114,7 @@ export default {
   right: 0;
   bottom: 0;
   background-color: #191919;
-  z-index: 9999;
+  z-index: 99999;
 }
 #preloader_logo {
   opacity: 0;
