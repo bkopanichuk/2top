@@ -18,31 +18,17 @@
             style="width: 100%; max-width: 1238px !important"
           >
             <div class="d-flex align-center">
-              <v-img :src="require('~/assets/logo.svg')" alt="logo" />
+              <img
+                class="menu_logo"
+                :src="require('~/assets/logo.svg')"
+                alt="logo"
+              />
             </div>
-            <div
-              class="d-flex align-center justify-space-between"
-              style="
-                width: 357px;
-                font-style: 700;
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 22px;
-              "
-            >
+            <div class="d-flex menu_items align-center justify-space-between">
               <div>Home</div>
               <div>Partners</div>
               <div>Blog</div>
-              <div
-                style="
-                  border: 1px solid #f9d073;
-                  padding: 7px 20px 11px 20px;
-                  border-radius: 8px;
-                  color: #f9d073;
-                "
-              >
-                Contact Us
-              </div>
+              <div class="contact_us_button">Contact Us</div>
             </div>
           </div>
         </div>
@@ -128,6 +114,13 @@ export default {
   opacity: 0;
   width: 20vw;
 }
+.grain {
+  position: fixed;
+  mix-blend-mode: normal;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 .menu {
   position: absolute;
   padding-left: 4.685vw;
@@ -137,12 +130,20 @@ export default {
   left: 0;
   right: 0;
 }
-.grain {
-  position: fixed;
-  mix-blend-mode: normal;
-  top: 0;
-  left: 0;
-  right: 0;
+.menu_items {
+  width: 26.135vw;
+  font-weight: 700;
+  font-size: 1.171vw;
+  line-height: 1.611vw;
+}
+.menu_logo {
+  width: 11.713vw;
+}
+.contact_us_button {
+  border: 1px solid #f9d073;
+  padding: 0.512vw 1.464vw 0.805vw 1.464vw;
+  border-radius: 0.586vw;
+  color: #f9d073;
 }
 
 @media only screen and (min-width: 1365px) {
@@ -150,6 +151,18 @@ export default {
     height: 88px;
     padding-left: 64px;
     padding-right: 64px;
+  }
+  .menu_items {
+    width: 357px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .menu_logo {
+    width: 160px;
+  }
+  .contact_us_button {
+    padding: 7px 20px 11px 20px;
+    border-radius: 8px;
   }
 }
 </style>
