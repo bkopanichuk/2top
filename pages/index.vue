@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- First block -->
+    <!-- Header block -->
     <v-row class="header">
       <v-col
         cols="6"
@@ -28,11 +28,15 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- Partners block -->
     <v-row class="partners">
       <v-col class="pa-0">
         <Partners />
       </v-col>
     </v-row>
+
+    <!-- Stats block -->
     <v-row class="stats">
       <v-col class="stat_text">
         We connect crypto startups at the initial stage with a Russian-speaking
@@ -54,6 +58,8 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- Nodes block -->
     <v-row class="nodes">
       <v-col class="d-flex nodes_text justify-center flex-column">
         <div class="nodes_title">Nodes</div>
@@ -70,6 +76,8 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- Squad block -->
     <v-row class="squad">
       <v-col class="pa-0">
         <div class="squad_title">Squad</div>
@@ -116,6 +124,37 @@
                 <img :src="require('~/assets/squad/ico.svg')" />
               </div>
               <div>ICO | IDO | IEO</div>
+            </div>
+          </div>
+        </div>
+      </v-col>
+    </v-row>
+
+    <!-- Comments block -->
+    <v-row class="comments">
+      <v-col class="d-flex comments_text justify-center flex-column">
+        <div class="comments_title">
+          We are only as good, <br />
+          as our clients say we are
+        </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </v-col>
+      <v-col class="d-flex comments_cards">
+        <div class="d-flex comment_card">
+          <div class="comment_card_avatar">
+            <img :src="require('~/assets/comments/avatar1.png')" />
+          </div>
+          <div class="comment_card_content">
+            <div class="d-flex">
+              <div class="comment_card_content_name">Kautilya Reddy</div>
+              <div class="comment_card_content_tag">@reddyzzz</div>
+            </div>
+            <div class="comment_card_content_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
           </div>
         </div>
@@ -329,6 +368,67 @@ export default {
   margin-bottom: 1.757vw;
 }
 
+/* Comments block */
+.comments {
+  margin-top: 14.641vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+  font-size: 1.464vw;
+  line-height: 160%;
+  color: #d9d7d2;
+}
+.comments_text {
+  padding: 0;
+  max-width: 38.799vw;
+}
+.comments_title {
+  color: #f8f9fc;
+  font-weight: bold;
+  font-size: 4.1vw;
+  line-height: 5.564vw;
+  margin-bottom: 1.757vw;
+}
+.comments_cards {
+  padding: 0;
+  padding-top: 2.05vw;
+  padding-left: 6.223vw;
+  height: min-content;
+}
+.comment_card {
+  padding: 2.928vw;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.171vw;
+  max-width: 28.111vw;
+  margin-right: 2.343vw;
+}
+.comment_card_avatar img {
+  width: 2.782vw;
+}
+.comment_card_content {
+  padding-left: 1.318vw;
+}
+.comment_card_content_name {
+  font-weight: 600;
+  font-size: 1.464vw;
+  line-height: 1.977vw;
+  color: #ffffff;
+}
+.comment_card_content_tag {
+  font-weight: normal;
+  font-size: 1.464vw;
+  line-height: 1.977vw;
+  color: #f5cd6f;
+  padding-left: 0.586vw;
+}
+.comment_card_content_text {
+  padding-top: 0.586vw;
+  font-weight: normal;
+  font-size: 1.318vw;
+  line-height: 160%;
+  color: #d9d7d2;
+}
+
 @media only screen and (min-width: 1365px) {
   /* Header block */
   .header {
@@ -456,6 +556,52 @@ export default {
   }
   .squad_row {
     margin-bottom: 24px;
+  }
+
+  /* Comments block */
+  .comments {
+    margin-top: 200px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+    font-size: 20px;
+  }
+  .comments_text {
+    padding: 0;
+    max-width: 530px;
+  }
+  .comments_title {
+    font-size: 56px;
+    line-height: 76px;
+    margin-bottom: 24px;
+  }
+  .comments_cards {
+    padding-top: 28px;
+    padding-left: 85px;
+  }
+  .comment_card {
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 384px;
+    margin-right: 32px;
+  }
+  .comment_card_avatar img {
+    width: 38px;
+  }
+  .comment_card_content {
+    padding-left: 18px;
+  }
+  .comment_card_content_name {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .comment_card_content_tag {
+    font-size: 20px;
+    line-height: 27px;
+    padding-left: 8px;
+  }
+  .comment_card_content_text {
+    padding-top: 8px;
+    font-size: 18px;
   }
 }
 </style>
