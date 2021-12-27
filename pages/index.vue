@@ -18,7 +18,7 @@
       </v-col>
       <v-col class="d-flex justify-center align-center" style="z-index: 1">
         <div class="header_grain t3d-layer" data-speed="2">
-          <img :src="require('~/assets/index/HeaderGrains.png')" />
+          <img :src="require('~/assets/index/HeaderGrains.svg')" />
         </div>
         <div class="big_logo_background t3d-layer" data-speed="-4">
           <img :src="require('~/assets/index/BigLogoBackground.svg')" />
@@ -55,15 +55,62 @@
       </v-col>
     </v-row>
     <v-row class="nodes">
-      <v-col class="pa-0">
-        <div>Nodes</div>
+      <v-col class="d-flex nodes_text justify-center flex-column">
+        <div class="nodes_title">Nodes</div>
         Decentralization, safety and security are important qualities of
         distributed systems.
         <br /><br />
         The unfolding of the nodes of the networks of promising projects shows
         our long-term vision of the market.
       </v-col>
-      <v-col> </v-col>
+      <v-col class="d-flex justify-end pa-0">
+        <img class="nodes_img" :src="require('~/assets/nodes/NodeList.svg')" />
+        <div class="nodes_grain">
+          <img :src="require('~/assets/nodes/NodesGrain.svg')" />
+        </div>
+      </v-col>
+    </v-row>
+    <v-row class="stats">
+      <v-col class="stat_text">
+        We connect crypto startups at the initial stage with a Russian-speaking
+        audience. We’re exploring their tech and investment attractiveness and
+        promoting them.
+        <br /><br />
+        Our mission is to create the strongest community of blockchain investors
+        and traders in the CIS. We believe in the active implementation of
+        blockchain technologies.
+      </v-col>
+      <v-col class="stat_numbers d-flex justify-end">
+        <div class="first_stat">
+          <div class="number">249+</div>
+          <div class="number_description">Projects</div>
+        </div>
+        <div>
+          <div class="number">$1.5m</div>
+          <div class="number_description">Under management</div>
+        </div>
+      </v-col>
+    </v-row>
+    <v-row class="stats">
+      <v-col class="stat_text">
+        We connect crypto startups at the initial stage with a Russian-speaking
+        audience. We’re exploring their tech and investment attractiveness and
+        promoting them.
+        <br /><br />
+        Our mission is to create the strongest community of blockchain investors
+        and traders in the CIS. We believe in the active implementation of
+        blockchain technologies.
+      </v-col>
+      <v-col class="stat_numbers d-flex justify-end">
+        <div class="first_stat">
+          <div class="number">249+</div>
+          <div class="number_description">Projects</div>
+        </div>
+        <div>
+          <div class="number">$1.5m</div>
+          <div class="number_description">Under management</div>
+        </div>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -117,6 +164,7 @@ export default {
 </script>
 
 <style>
+/* Header block */
 .header {
   font-style: normal;
   font-weight: 700;
@@ -132,7 +180,7 @@ export default {
   top: 0;
 }
 .header_grain img {
-  transform: translateX(-15.373vw);
+  transform: translateX(-15.373vw) translateY(-8.785vw);
   width: 122.987vw;
 }
 .big_logo {
@@ -156,11 +204,15 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Partners block */
 .partners {
   margin-top: 23.426vw !important;
   padding-left: 2.928vw;
   padding-right: 2.928vw;
 }
+
+/* Stats block */
 .stats {
   margin-top: 14.641vw !important;
   padding-left: 4.685vw;
@@ -194,7 +246,41 @@ export default {
   padding: 0;
   padding-top: 1.757vw;
 }
+
+/* Nodes block */
+.nodes {
+  margin-top: 14.641vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.466vw;
+  font-size: 1.464vw;
+  line-height: 160%;
+  color: #d9d7d2;
+}
+.nodes_title {
+  color: #f8f9fc;
+  font-weight: bold;
+  font-size: 4.1vw;
+  line-height: 5.564vw;
+  margin-bottom: 1.757vw;
+}
+.nodes_text {
+  padding: 0;
+  padding-right: 15.373vw;
+}
+.nodes_img {
+  width: 35.725vw;
+}
+.nodes_grain {
+  position: absolute;
+  top: 0;
+}
+.nodes_grain img {
+  width: 197.657vw;
+  transform: translateX(29.283vw) translateY(-7.321vw);
+}
+
 @media only screen and (min-width: 1365px) {
+  /* Header block */
   .header {
     font-size: 56px;
     line-height: 76px;
@@ -216,18 +302,23 @@ export default {
   }
   .header_grain img {
     width: 1680px;
-    transform: translateX(-210px);
+    transform: translateX(-210px) translateY(-120px);
   }
+
+  /* Partners block */
   .partners {
     margin-top: 320px !important;
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  /* Stats block */
   .stats {
     margin-top: 200px !important;
     padding-left: 64px;
     padding-right: 64px;
     font-size: 20px;
+    color: #d9d7d2;
   }
   .stats .number {
     font-family: Inter;
@@ -251,6 +342,38 @@ export default {
   }
   .stat_text {
     padding-right: 24px;
+  }
+
+  /* Nodes block */
+  .nodes {
+    margin-top: 200px !important;
+    padding-left: 64px;
+    padding-right: 61px;
+    font-size: 20px;
+    line-height: 160%;
+    color: #d9d7d2;
+  }
+  .nodes_title {
+    color: #f8f9fc;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 76px;
+    margin-bottom: 24px;
+  }
+  .nodes_text {
+    padding: 0;
+    padding-right: 210px;
+  }
+  .nodes_img {
+    width: 488px;
+  }
+  .nodes_grain {
+    position: absolute;
+    top: 0;
+  }
+  .nodes_grain img {
+    width: 2700px;
+    transform: translateX(400px) translateY(-100px);
   }
 }
 </style>
