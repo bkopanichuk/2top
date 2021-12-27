@@ -1,10 +1,17 @@
 <template>
   <v-app dark>
-    <v-main style="background-color: #191919; font-family: 'Darker Grotesque'">
+    <v-main
+      style="
+        background-color: #191919;
+        font-family: 'Darker Grotesque';
+        padding-bottom: 76px;
+        overflow: hidden;
+      "
+    >
       <!-- Preloader -->
       <div id="preloader">
         <div id="preloader_logo" class="d-flex align-center">
-          <v-img width="100%" :src="require('~/assets/logo.svg')" alt="logo" />
+          <v-img width="100%" :src="require('~/assets/logo.svg')" />
         </div>
       </div>
       <div class="grain" style="z-index: 1">
@@ -18,11 +25,7 @@
             style="width: 100%; max-width: 1238px !important"
           >
             <div class="d-flex align-center">
-              <img
-                class="menu_logo"
-                :src="require('~/assets/logo.svg')"
-                alt="logo"
-              />
+              <img class="menu_logo" :src="require('~/assets/logo.svg')" />
             </div>
             <div class="d-flex menu_items align-center justify-space-between">
               <div>Home</div>

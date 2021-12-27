@@ -71,7 +71,7 @@
       </v-col>
       <v-col class="d-flex justify-end pa-0">
         <img class="nodes_img" :src="require('~/assets/nodes/NodeList.svg')" />
-        <div class="nodes_grain">
+        <div class="d-flex align-center justify-center nodes_grain">
           <img :src="require('~/assets/nodes/NodesGrain.svg')" />
         </div>
       </v-col>
@@ -126,6 +126,9 @@
               <div>ICO | IDO | IEO</div>
             </div>
           </div>
+        </div>
+        <div class="d-flex align-center">
+          <img class="squad_grain" :src="require('~/assets/squad/Grain.svg')" />
         </div>
       </v-col>
     </v-row>
@@ -183,6 +186,9 @@
         <div class="joinus_logo">
           <img :src="require('~/assets/joinus/logo.svg')" />
         </div>
+        <div class="d-flex align-center justify-center joinus_grain">
+          <img :src="require('~/assets/joinus/grain.svg')" />
+        </div>
       </v-col>
     </v-row>
 
@@ -193,11 +199,7 @@
         style="max-width: 1366px"
       >
         <div class="d-flex align-center">
-          <img
-            class="footer_logo"
-            :src="require('~/assets/logo.svg')"
-            alt="logo"
-          />
+          <img class="footer_logo" :src="require('~/assets/logo.svg')" />
         </div>
         <div class="d-flex footer_social align-center justify-space-between">
           <div>instagram</div>
@@ -357,19 +359,19 @@ export default {
   font-size: 4.1vw;
   line-height: 5.564vw;
   margin-bottom: 1.757vw;
+  z-index: 2;
 }
 .nodes_text {
   padding: 0;
   padding-right: 15.373vw;
+  z-index: 2;
 }
 .nodes_img {
   width: 35.725vw;
-}
-.nodes_grain {
-  position: absolute;
-  top: 0;
+  z-index: 2;
 }
 .nodes_grain img {
+  position: absolute;
   width: 197.657vw;
   transform: translateX(29.283vw) translateY(-7.321vw);
 }
@@ -383,18 +385,27 @@ export default {
   line-height: 160%;
   color: #d9d7d2;
 }
+.squad_grain {
+  position: absolute;
+  width: 2700px;
+  transform: translateX(-1200px) translateY(100px);
+  z-index: 1;
+}
 .squad_title {
   color: #f8f9fc;
   font-weight: bold;
   font-size: 4.1vw;
   line-height: 5.564vw;
   margin-bottom: 1.318vw;
+  z-index: 2;
 }
 .squad_text {
   max-width: 31.113vw;
   margin-bottom: 4.1vw;
+  z-index: 2;
 }
 .squad_card {
+  z-index: 2;
   width: 31.5%;
   padding: 2.928vw;
   background: rgba(255, 255, 255, 0.03);
@@ -651,21 +662,21 @@ export default {
     font-size: 56px;
     line-height: 76px;
     margin-bottom: 24px;
+    z-index: 2;
   }
   .nodes_text {
     padding: 0;
     padding-right: 210px;
+    z-index: 2;
   }
   .nodes_img {
     width: 488px;
-  }
-  .nodes_grain {
-    position: absolute;
-    top: 0;
+    z-index: 2;
   }
   .nodes_grain img {
+    z-index: 1;
     width: 2700px;
-    transform: translateX(400px) translateY(-100px);
+    transform: translateX(-900px) translateY(-800px);
   }
 
   /* Squad block */
@@ -790,6 +801,14 @@ export default {
   }
   .joinus_logo img {
     width: 600px;
+  }
+  .joinus_grain {
+    position: absolute;
+  }
+  .joinus_grain img {
+    width: 1000px;
+    transform: translateX(450px) translateY(320px);
+    z-index: 1;
   }
 
   /* Footer block */

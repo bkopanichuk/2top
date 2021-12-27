@@ -1,18 +1,25 @@
 <template>
   <div class="d-flex align-center justify-space-between flex-wrap">
     <div v-for="partner in partners" :key="partner.name" style="z-index: 2">
-      <a
-        @mouseover="changeSrc(partner, true)"
-        @mouseleave="changeSrc(partner, false)"
-        :href="partner.url"
-        target="_blank"
-      >
-        <img
-          :class="'partner_logo ' + partner.name"
-          :src="partner.src_gray"
-          :alt="partner.name"
-        />
-      </a>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <a
+            @mouseover="changeSrc(partner, true)"
+            @mouseleave="changeSrc(partner, false)"
+            :href="partner.url"
+            target="_blank"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <img
+              :class="'partner_logo ' + partner.name"
+              :src="partner.src_gray"
+              :alt="partner.name"
+            />
+          </a>
+        </template>
+        <span>Нужны одинаковые лого чтоб не дергалась анимация</span>
+      </v-tooltip>
     </div>
   </div>
 </template>
