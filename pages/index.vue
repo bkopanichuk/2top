@@ -219,10 +219,10 @@ export default {
     animateHeader() {
       //Animate text
       this.$gsap.from('.header_text', {
-        delay: 1.3,
-        duration: 1,
+        delay: 1.4,
+        duration: 0.8,
         opacity: 0,
-        x: -300,
+        x: -200,
       })
 
       // let mouseOverContainer = document.getElementById('t3d')
