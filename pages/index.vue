@@ -160,6 +160,53 @@
         </div>
       </v-col>
     </v-row>
+
+    <!-- Team block -->
+    <v-row class="team">
+      <v-col class="pa-0">
+        <div class="team_title">Team</div>
+        <div class="team_text">Young and beautiful (c) Lana Del Ray</div>
+        <div class="team_img">
+          <img :src="require('~/assets/team/FakeTeam.svg')" />
+        </div>
+      </v-col>
+    </v-row>
+
+    <!-- Join Us block -->
+    <v-row class="d-flex joinus justify-center">
+      <v-col
+        class="joinus_text pa-0 d-flex align-center justify-center flex-column"
+      >
+        Do you want to be a part <br />
+        of our team?
+        <div class="joinus_btn">Join us!</div>
+        <div class="joinus_logo">
+          <img :src="require('~/assets/joinus/logo.svg')" />
+        </div>
+      </v-col>
+    </v-row>
+
+    <!-- Footer block -->
+    <v-row class="d-flex footer align-center justify-center">
+      <v-col
+        class="footer_content d-flex align-center justify-space-between"
+        style="max-width: 1366px"
+      >
+        <div class="d-flex align-center">
+          <img
+            class="footer_logo"
+            :src="require('~/assets/logo.svg')"
+            alt="logo"
+          />
+        </div>
+        <div class="d-flex footer_social align-center justify-space-between">
+          <div>instagram</div>
+          <div>twitter</div>
+          <div>youtube</div>
+        </div>
+        <div class="footer_contact_us">Contact Us</div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -429,6 +476,101 @@ export default {
   color: #d9d7d2;
 }
 
+/* Team block */
+.team {
+  margin-top: 14.641vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+  font-size: 1.464vw;
+  line-height: 160%;
+  color: #d9d7d2;
+}
+.team_title {
+  font-size: 4.1vw;
+  line-height: 5.564vw;
+  margin-bottom: 1.318vw;
+  color: #f8f9fc;
+  font-weight: bold;
+}
+.team_text {
+  max-width: 31.113vw;
+  margin-bottom: 4.1vw;
+}
+.team_img img {
+  width: 90.776vw;
+}
+
+/* Join Us block */
+.joinus {
+  margin-top: 19.034vw !important;
+  margin-bottom: 13.909vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+  font-weight: bold;
+  font-size: 4.1vw;
+  line-height: 5.564vw;
+}
+.joinus_text {
+  width: fit-content;
+  text-align: center;
+}
+.joinus_btn {
+  background: linear-gradient(92.16deg, #b28736 8.45%, #f8cf72 100.74%);
+  border-radius: 0.586vw;
+  font-weight: bold;
+  font-size: 1.464vw;
+  line-height: 1.977vw;
+  color: #ffffff;
+  width: fit-content;
+  margin-top: 2.928vw;
+  padding-left: 2.562vw;
+  padding-right: 2.562vw;
+  padding-top: 0.586vw;
+  padding-bottom: 0.952vw;
+}
+.joinus_logo {
+  position: absolute;
+  transform: translateX(24.597vw) translateY(1.464vw);
+}
+.joinus_logo img {
+  width: 43.924vw;
+}
+
+/* Footer block */
+.footer {
+  margin-top: 0 !important;
+  z-index: 20;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #191919;
+  height: 6.442vw;
+}
+.footer_content {
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+}
+.footer_logo {
+  width: 11.713vw;
+}
+.footer_social {
+  width: 23.426vw;
+  font-weight: 500;
+  font-size: 1.318vw;
+  line-height: 1.757vw;
+  color: #d9d7d2;
+  text-shadow: 0 0.146vw 0.439vw rgba(34, 34, 34, 0.5);
+}
+.footer_contact_us {
+  border: 1px solid #f9d073;
+  padding: 0.512vw 1.464vw 0.805vw 1.464vw;
+  border-radius: 0.586vw;
+  color: #f9d073;
+  font-weight: bold;
+  font-size: 1.171vw;
+  line-height: 1.611vw;
+}
+
 @media only screen and (min-width: 1365px) {
   /* Header block */
   .header {
@@ -602,6 +744,76 @@ export default {
   .comment_card_content_text {
     padding-top: 8px;
     font-size: 18px;
+  }
+
+  /* Team block */
+  .team {
+    margin-top: 200px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+    font-size: 20px;
+  }
+  .team_title {
+    font-size: 56px;
+    line-height: 76px;
+    margin-bottom: 18px;
+  }
+  .team_text {
+    max-width: 425px;
+    margin-bottom: 56px;
+  }
+  .team_img img {
+    width: 1240px;
+  }
+
+  /* Join Us block */
+  .joinus {
+    margin-top: 260px !important;
+    margin-bottom: 190px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+    font-size: 56px;
+    line-height: 76px;
+  }
+  .joinus_btn {
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 27px;
+    margin-top: 40px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 8px;
+    padding-bottom: 13px;
+  }
+  .joinus_logo {
+    transform: translateX(336px) translateY(20px);
+  }
+  .joinus_logo img {
+    width: 600px;
+  }
+
+  /* Footer block */
+  .footer {
+    height: 88px;
+  }
+  .footer_content {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .footer_logo {
+    width: 160px;
+  }
+  .footer_social {
+    width: 320px;
+    font-size: 18px;
+    line-height: 24px;
+    text-shadow: 0px 2px 6px rgba(34, 34, 34, 0.5);
+  }
+  .footer_contact_us {
+    padding: 7px 20px 11px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 </style>

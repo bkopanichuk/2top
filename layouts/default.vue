@@ -86,9 +86,6 @@ export default {
           delay: 1.2,
           duration: 0.2,
         })
-        .set('#content', {
-          visibility: 'visible',
-        })
         .to('#preloader', {
           display: 'none',
           opacity: 0,
@@ -100,9 +97,6 @@ export default {
 </script>
 
 <style>
-#content {
-  visibility: hidden;
-}
 #preloader {
   display: flex;
   flex-direction: column;
