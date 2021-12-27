@@ -2,12 +2,8 @@
   <div>
     <!-- Header block -->
     <v-row class="header">
-      <v-col
-        cols="6"
-        style="z-index: 2; animation: 3s linear 1s slidein"
-        class="pa-0"
-      >
-        <div>
+      <v-col cols="6" style="z-index: 2" class="pa-0">
+        <div class="header_text">
           Hello, we’re
           <span class="gradient_text">Double Top</span>
           - <br />
@@ -220,7 +216,15 @@ export default {
     Partners,
   },
   methods: {
-    animateBigLogo() {
+    animateHeader() {
+      //Animate text
+      this.$gsap.from('.header_text', {
+        delay: 1.4,
+        duration: 1,
+        opacity: 0,
+        x: -300,
+      })
+
       // let mouseOverContainer = document.getElementById('t3d')
       window.addEventListener('mousemove', (e) => {
         let xy = [e.clientX, e.clientY]
@@ -254,7 +258,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.animateBigLogo()
+      this.animateHeader()
     })
   },
 }
