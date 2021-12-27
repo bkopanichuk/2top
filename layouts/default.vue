@@ -1,13 +1,6 @@
 <template>
   <v-app dark>
-    <v-main
-      style="
-        background-color: #191919;
-        font-family: 'Darker Grotesque';
-        padding-bottom: 76px;
-        overflow: hidden;
-      "
-    >
+    <v-main class="main">
       <!-- Preloader -->
       <div id="preloader">
         <div id="preloader_logo" class="d-flex align-center">
@@ -100,6 +93,11 @@ export default {
 </script>
 
 <style>
+.main {
+  background-color: #191919;
+  font-family: 'Darker Grotesque';
+  overflow: hidden;
+}
 #preloader {
   display: flex;
   flex-direction: column;
@@ -167,6 +165,12 @@ export default {
   .contact_us_button {
     padding: 7px 20px 11px 20px;
     border-radius: 8px;
+  }
+  .main {
+    background-color: #191919;
+    font-family: 'Darker Grotesque';
+    padding-bottom: 76px !important;
+    overflow: hidden;
   }
 }
 </style>

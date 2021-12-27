@@ -372,8 +372,9 @@ export default {
 }
 .nodes_grain img {
   position: absolute;
-  width: 197.657vw;
-  transform: translateX(29.283vw) translateY(-7.321vw);
+  z-index: 1;
+  width: 146.413vw;
+  transform: translateX(-49.78vw) translateY(-36.603vw);
 }
 
 /* Squad block */
@@ -387,8 +388,8 @@ export default {
 }
 .squad_grain {
   position: absolute;
-  width: 2700px;
-  transform: translateX(-1200px) translateY(100px);
+  width: 139.092vw;
+  transform: translateX(-33.675vw) translateY(-4.392vw);
   z-index: 1;
 }
 .squad_title {
@@ -405,7 +406,7 @@ export default {
   z-index: 2;
 }
 .squad_card {
-  z-index: 2;
+  z-index: 3;
   width: 31.5%;
   padding: 2.928vw;
   background: rgba(255, 255, 255, 0.03);
@@ -546,6 +547,14 @@ export default {
 .joinus_logo img {
   width: 43.924vw;
 }
+.joinus_grain {
+  position: absolute;
+}
+.joinus_grain img {
+  width: 73.206vw;
+  transform: translateX(32.943vw) translateY(23.426vw);
+  z-index: 1;
+}
 
 /* Footer block */
 .footer {
@@ -675,8 +684,8 @@ export default {
   }
   .nodes_grain img {
     z-index: 1;
-    width: 2700px;
-    transform: translateX(-900px) translateY(-800px);
+    width: 2000px;
+    transform: translateX(-680px) translateY(-500px);
   }
 
   /* Squad block */
@@ -686,20 +695,29 @@ export default {
     padding-right: 64px;
     font-size: 20px;
   }
+  .squad_grain {
+    position: absolute;
+    width: 1900px;
+    transform: translateX(-460px) translateY(-60px);
+    z-index: 1;
+  }
   .squad_title {
     font-size: 56px;
     line-height: 76px;
     margin-bottom: 18px;
+    z-index: 2;
   }
   .squad_text {
     max-width: 425px;
     margin-bottom: 56px;
+    z-index: 2;
   }
   .squad_card {
     padding: 40px;
     border-radius: 16px;
     font-size: 24px;
     line-height: 40px;
+    z-index: 2;
   }
   .squad_card_icon {
     margin-bottom: 24px;
