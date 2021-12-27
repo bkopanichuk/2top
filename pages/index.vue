@@ -219,7 +219,7 @@ export default {
     animateHeader() {
       //Animate text
       this.$gsap.from('.header_text', {
-        delay: 1.4,
+        delay: 1.3,
         duration: 1,
         opacity: 0,
         x: -300,
