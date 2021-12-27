@@ -25,14 +25,14 @@ export default {
         .timeline()
         .to('.' + partner.name, {
           opacity: 0.4,
-          duration: 0.2,
+          duration: 0.1,
         })
         .set('.' + partner.name, {
           attr: { src: hover ? partner.src : partner.src_gray },
         })
         .to('.' + partner.name, {
           opacity: 1,
-          duration: 0.3,
+          duration: 0.2,
         })
     },
   },

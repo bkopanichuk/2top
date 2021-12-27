@@ -70,45 +70,54 @@
         </div>
       </v-col>
     </v-row>
-    <v-row class="stats">
-      <v-col class="stat_text">
-        We connect crypto startups at the initial stage with a Russian-speaking
-        audience. We’re exploring their tech and investment attractiveness and
-        promoting them.
-        <br /><br />
-        Our mission is to create the strongest community of blockchain investors
-        and traders in the CIS. We believe in the active implementation of
-        blockchain technologies.
-      </v-col>
-      <v-col class="stat_numbers d-flex justify-end">
-        <div class="first_stat">
-          <div class="number">249+</div>
-          <div class="number_description">Projects</div>
+    <v-row class="squad">
+      <v-col class="pa-0">
+        <div class="squad_title">Squad</div>
+        <div class="squad_text">
+          SQUAD is a strong community of like-minded people, a symbiosis of
+          useful information and expert judgment.
         </div>
         <div>
-          <div class="number">$1.5m</div>
-          <div class="number_description">Under management</div>
-        </div>
-      </v-col>
-    </v-row>
-    <v-row class="stats">
-      <v-col class="stat_text">
-        We connect crypto startups at the initial stage with a Russian-speaking
-        audience. We’re exploring their tech and investment attractiveness and
-        promoting them.
-        <br /><br />
-        Our mission is to create the strongest community of blockchain investors
-        and traders in the CIS. We believe in the active implementation of
-        blockchain technologies.
-      </v-col>
-      <v-col class="stat_numbers d-flex justify-end">
-        <div class="first_stat">
-          <div class="number">249+</div>
-          <div class="number_description">Projects</div>
-        </div>
-        <div>
-          <div class="number">$1.5m</div>
-          <div class="number_description">Under management</div>
+          <div class="d-flex squad_row align-center justify-space-between">
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/fundamental.svg')" />
+              </div>
+              <div>Fundamental analysis</div>
+            </div>
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/Technical.svg')" />
+              </div>
+              <div>Technical analysis</div>
+            </div>
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/defi.svg')" />
+              </div>
+              <div>DEFI</div>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between">
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/nft.svg')" />
+              </div>
+              <div>NFT</div>
+            </div>
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/nodes.svg')" />
+              </div>
+              <div>Nodes</div>
+            </div>
+            <div class="d-flex flex-column squad_card justify-space-between">
+              <div class="squad_card_icon">
+                <img :src="require('~/assets/squad/ico.svg')" />
+              </div>
+              <div>ICO | IDO | IEO</div>
+            </div>
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -279,6 +288,47 @@ export default {
   transform: translateX(29.283vw) translateY(-7.321vw);
 }
 
+/* Squad block */
+.squad {
+  margin-top: 14.641vw !important;
+  padding-left: 4.685vw;
+  padding-right: 4.685vw;
+  font-size: 1.464vw;
+  line-height: 160%;
+  color: #d9d7d2;
+}
+.squad_title {
+  color: #f8f9fc;
+  font-weight: bold;
+  font-size: 4.1vw;
+  line-height: 5.564vw;
+  margin-bottom: 1.318vw;
+}
+.squad_text {
+  max-width: 31.113vw;
+  margin-bottom: 4.1vw;
+}
+.squad_card {
+  width: 31.5%;
+  padding: 2.928vw;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.171vw;
+  font-weight: bold;
+  font-size: 1.757vw;
+  line-height: 2.928vw;
+  color: #ffffff;
+}
+.squad_card_icon {
+  margin-bottom: 1.757vw;
+}
+.squad_card_icon img {
+  width: 4.685vw;
+}
+.squad_row {
+  margin-bottom: 1.757vw;
+}
+
 @media only screen and (min-width: 1365px) {
   /* Header block */
   .header {
@@ -374,6 +424,38 @@ export default {
   .nodes_grain img {
     width: 2700px;
     transform: translateX(400px) translateY(-100px);
+  }
+
+  /* Squad block */
+  .squad {
+    margin-top: 200px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+    font-size: 20px;
+  }
+  .squad_title {
+    font-size: 56px;
+    line-height: 76px;
+    margin-bottom: 18px;
+  }
+  .squad_text {
+    max-width: 425px;
+    margin-bottom: 56px;
+  }
+  .squad_card {
+    padding: 40px;
+    border-radius: 16px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+  .squad_card_icon {
+    margin-bottom: 24px;
+  }
+  .squad_card_icon img {
+    width: 64px;
+  }
+  .squad_row {
+    margin-bottom: 24px;
   }
 }
 </style>
