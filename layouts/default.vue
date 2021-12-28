@@ -1,12 +1,12 @@
 <template>
   <v-app dark>
     <v-main class="main">
-      <!-- Preloader -->
+      <!-- Preloader
       <div id="preloader">
         <div id="preloader_logo" class="d-flex align-center">
           <v-img width="100%" :src="require('~/assets/logo.svg')" />
         </div>
-      </div>
+      </div> -->
       <div class="grain" style="z-index: 1">
         <v-img :src="require('~/assets/grain.svg')" />
       </div>
@@ -44,50 +44,54 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.showPage()
+      // this.showPage()
+      this.$gsap.from('#content', {
+        delay: 0.4,
+        opacity: 0,
+        duration: 0.4,
+      })
     })
   },
   methods: {
-    showPage() {
-      //Preloader Logo
-      this.$gsap.to('#preloader_logo', {
-        opacity: 1,
-        duration: 0.4,
-        ease: 'expo.out',
-      })
-      this.$gsap.to('#preloader_logo', {
-        scale: 2,
-        duration: 1,
-        ease: 'expoScale(1, 1.5, expo.out)',
-      })
-      this.$gsap.to('#preloader_logo', {
-        delay: 1,
-        scale: 100,
-        duration: 0.4,
-        ease: 'expoScale(1.5, 100, expo.in)',
-        webkitFilter: 'blur(1024px)',
-        filter: 'blur(1024px)',
-      })
-      this.$gsap.to('#preloader_logo', {
-        delay: 1.3,
-        opacity: 0,
-        duration: 0,
-      })
-
-      // Preloader
-      this.$gsap
-        .timeline()
-        .to('#preloader', {
-          backgroundColor: '#F9D073',
-          delay: 1.2,
-          duration: 0.2,
-        })
-        .to('#preloader', {
-          display: 'none',
-          opacity: 0,
-          duration: 1.6,
-        })
-    },
+    // showPage() {
+    //   //Preloader Logo
+    //   this.$gsap.to('#preloader_logo', {
+    //     opacity: 1,
+    //     duration: 0.4,
+    //     ease: 'expo.out',
+    //   })
+    //   this.$gsap.to('#preloader_logo', {
+    //     scale: 2,
+    //     duration: 1,
+    //     ease: 'expoScale(1, 1.5, expo.out)',
+    //   })
+    //   this.$gsap.to('#preloader_logo', {
+    //     delay: 1,
+    //     scale: 100,
+    //     duration: 0.4,
+    //     ease: 'expoScale(1.5, 100, expo.in)',
+    //     webkitFilter: 'blur(1024px)',
+    //     filter: 'blur(1024px)',
+    //   })
+    //   this.$gsap.to('#preloader_logo', {
+    //     delay: 1.3,
+    //     opacity: 0,
+    //     duration: 0,
+    //   })
+    //   // Preloader
+    //   this.$gsap
+    //     .timeline()
+    //     .to('#preloader', {
+    //       backgroundColor: '#F9D073',
+    //       delay: 1.2,
+    //       duration: 0.2,
+    //     })
+    //     .to('#preloader', {
+    //       display: 'none',
+    //       opacity: 0,
+    //       duration: 1.6,
+    //     })
+    // },
   },
 }
 </script>

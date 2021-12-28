@@ -4,6 +4,7 @@
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
           <a
+            class="partner_href"
             @mouseover="changeSrc(partner, true)"
             @mouseleave="changeSrc(partner, false)"
             :href="partner.url"

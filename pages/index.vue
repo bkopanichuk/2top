@@ -4,9 +4,7 @@
     <v-row class="header">
       <v-col cols="6" style="z-index: 2" class="pa-0">
         <div class="header_text">
-          Hello, we’re
-          <span class="gradient_text">Double Top</span>
-          - <br />
+          Hello, we’re Double Top - <br />
           a community of investors,<br />
           enthusiasts and tech-savvy <br />
           members in the crypto space
@@ -210,6 +208,7 @@
 
 <script>
 import Partners from '@/components/Partners.vue'
+import SplitType from 'split-type'
 export default {
   name: 'IndexPage',
   components: {
@@ -218,12 +217,28 @@ export default {
   methods: {
     animateHeader() {
       //Animate text
-      this.$gsap.from('.header_text', {
-        delay: 1.4,
-        duration: 0.8,
-        opacity: 0,
-        x: -200,
+      const text = new SplitType('.header_text', {
+        types: 'words',
       })
+
+      this.$gsap
+        .timeline()
+        .from(text.words, {
+          delay: 0.4,
+          duration: 1,
+          opacity: 0,
+          y: 40,
+          stagger: { amount: 0.8 },
+          ease: 'power4.inOut',
+        })
+        .from('.partner_href img', {
+          delay: -1.2,
+          duration: 1,
+          opacity: 0,
+          y: 40,
+          stagger: { amount: 0.8 },
+          ease: 'power4.inOut',
+        })
 
       // let mouseOverContainer = document.getElementById('t3d')
       window.addEventListener('mousemove', (e) => {
@@ -300,10 +315,10 @@ export default {
 .big_logo_background img {
   width: 59.297vw;
 }
-.gradient_text {
-  background: -webkit-linear-gradient(70deg, #f5cd6f, #fce2a4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.gradient_text > div:nth-child(3) {
+  background: -webkit-linear-gradient(70deg, #f5cd6f, #fce2a4) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 /* Partners block */
