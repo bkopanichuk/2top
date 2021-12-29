@@ -7,9 +7,9 @@
           <v-img width="100%" :src="require('~/assets/logo.svg')" />
         </div>
       </div> -->
-      <div class="grain" style="z-index: 1">
+      <!-- <div class="grain" style="z-index: 1">
         <v-img :src="require('~/assets/grain.svg')" />
-      </div>
+      </div> -->
       <v-container id="content" style="max-width: 1366px; z-index: 2">
         <!-- Menu -->
         <div class="d-flex menu align-center justify-center">
@@ -119,13 +119,13 @@ export default {
   opacity: 0;
   width: 20vw;
 }
-.grain {
+/* .grain {
   position: fixed;
   mix-blend-mode: normal;
   top: 0;
   left: 0;
   right: 0;
-}
+} */
 .menu {
   z-index: 10;
   position: absolute;

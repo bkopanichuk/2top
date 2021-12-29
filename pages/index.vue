@@ -7,16 +7,16 @@
           Hello, we’re Double Top - <br />
           a community of investors,<br />
           enthusiasts and tech-savvy <br />
-          members in the crypto space
+          members in the crypto space.
         </div>
       </v-col>
       <v-col class="d-flex justify-center align-center" style="z-index: 1">
         <div class="header_grain t3d-layer" data-speed="2">
           <img :src="require('~/assets/index/HeaderGrains.svg')" />
         </div>
-        <div class="big_logo_background t3d-layer" data-speed="-4">
+        <!-- <div class="big_logo_background t3d-layer" data-speed="-4">
           <img :src="require('~/assets/index/BigLogoBackground.svg')" />
-        </div>
+        </div> -->
         <div class="big_logo t3d-layer" data-speed="2">
           <img :src="require('~/assets/index/BigLogo.svg')" />
         </div>
@@ -296,26 +296,26 @@ export default {
   top: 0;
 }
 .header_grain img {
-  transform: translateX(-15.373vw) translateY(-8.785vw);
+  transform: translateX(-13.177vw) translateY(-8.785vw);
   width: 122.987vw;
 }
 .big_logo {
   z-index: 3;
   position: absolute;
-  top: 21.669vw;
+  top: 18.594vw;
 }
 .big_logo img {
-  width: 20.498vw;
+  width: 23.939vw;
 }
-.big_logo_background {
+/* .big_logo_background {
   z-index: 2;
   position: absolute;
   top: 4.392vw;
-}
-.big_logo_background img {
+} */
+/* .big_logo_background img {
   width: 59.297vw;
-}
-.gradient_text > div:nth-child(3) {
+} */
+.gradient_text > .word:nth-child(3) {
   background: -webkit-linear-gradient(70deg, #f5cd6f, #fce2a4) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -620,20 +620,20 @@ export default {
     padding-left: 64px;
   }
   .big_logo {
-    top: 296px;
+    top: 254px;
   }
   .big_logo img {
-    width: 280px;
+    width: 327px;
   }
-  .big_logo_background {
+  /* .big_logo_background {
     top: 60px;
-  }
-  .big_logo_background img {
+  } */
+  /* .big_logo_background img {
     width: 810px;
-  }
+  } */
   .header_grain img {
     width: 1680px;
-    transform: translateX(-210px) translateY(-120px);
+    transform: translateX(-180px) translateY(-120px);
   }
 
   /* Partners block */
