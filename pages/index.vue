@@ -11,13 +11,13 @@
         </div>
       </v-col>
       <v-col class="d-flex justify-center align-center" style="z-index: 1">
-        <div class="header_grain t3d-layer" data-speed="2">
+        <div class="header_grain t3d-layer" data-speed="-20">
           <img :src="require('~/assets/index/HeaderGrains.svg')" />
         </div>
         <!-- <div class="big_logo_background t3d-layer" data-speed="-4">
           <img :src="require('~/assets/index/BigLogoBackground.svg')" />
         </div> -->
-        <div class="big_logo t3d-layer" data-speed="2">
+        <div class="big_logo t3d-layer" data-speed="3">
           <img :src="require('~/assets/index/BigLogo.svg')" />
         </div>
       </v-col>
@@ -258,13 +258,15 @@ export default {
           calcY = Math.abs(calcY) >= 2 ? Math.sign(calcY) * 2 : calcY
 
           // Position move
-          let x = ((position[0] - box.x - box.width / 2) / box.width) * speed
-          let y = ((position[1] - box.y - box.height / 2) / box.height) * speed
-          x = Math.abs(x) >= 7 ? Math.sign(x) * 7 : x
-          y = Math.abs(y) >= 7 ? Math.sign(y) * 7 : y
+          let x =
+            ((position[0] - box.x - box.width / 2) / box.width) * speed * 3
+          let y =
+            ((position[1] - box.y - box.height / 2) / box.height) * speed * 3
+          x = Math.abs(x) >= 20 ? Math.sign(x) * 20 : x
+          y = Math.abs(y) >= 20 ? Math.sign(y) * 20 : y
 
           this.$gsap.to(layer, {
-            duration: 0.2,
+            duration: 2,
             transform: `perspective(100px) rotateX(${calcX}deg) rotateY(${calcY}deg) translateX(${x}px) translateY(${y}px)`,
           })
         })
