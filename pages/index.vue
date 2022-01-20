@@ -211,6 +211,7 @@ import Partners from '@/components/Partners.vue'
 import SplitType from 'split-type'
 export default {
   name: 'IndexPage',
+  transition: 'intro',
   components: {
     Partners,
   },

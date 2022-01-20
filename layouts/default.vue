@@ -21,9 +21,9 @@
               <img class="menu_logo" :src="require('~/assets/logo.svg')" />
             </div>
             <div class="d-flex menu_items align-center justify-space-between">
-              <div>Home</div>
+              <div><NuxtLink to="/">Home</NuxtLink></div>
               <div>Partners</div>
-              <div>Blog</div>
+              <div><NuxtLink to="/blog">Blog</NuxtLink></div>
               <div class="contact_us_button">Contact Us</div>
             </div>
           </div>
@@ -97,10 +97,19 @@ export default {
 </script>
 
 <style>
-.main {
+#app {
   background-color: #191919;
   font-family: 'Darker Grotesque';
   overflow: hidden;
+}
+.intro-enter,
+.intro-leave-to {
+  opacity: 0;
+  transform: translateX(-2em);
+}
+.intro-enter-active,
+.intro-leave-active {
+  transition: all 0.3s ease;
 }
 #preloader {
   display: flex;
